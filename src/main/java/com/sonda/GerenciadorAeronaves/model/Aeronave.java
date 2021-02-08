@@ -1,11 +1,10 @@
-package com.sonda.GerenciadorAeronaves;
+package com.sonda.GerenciadorAeronaves.model;
 
-import org.w3c.dom.Text;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity //Anotação utilizada indicar que a Classe é uma Entidade e está sendo Mapeada para o BD
@@ -20,6 +19,8 @@ import java.util.Date;
 
 public class Aeronave {
     @Id //Anotação para determinar a chave primária
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //Anotação para gerar um ID atomaticamente
+    @Column
     private Long id;
     @Column //Anotação para indicar as colunas no BD
     private String nome;
@@ -28,16 +29,21 @@ public class Aeronave {
     @Column
     private Integer ano;
     @Column
-    private Text descricao;
+    @Lob //Text
+    private String descricao;
     @Column
     private boolean vendido;
+    @JsonFormat(pattern = "dd/MM/yyyy hh:mm:ss") //Formata o Dia/hora
     @Column
     private Date criado;
+    @JsonFormat(pattern = "dd/MM/yyyy hh:mm:ss")
     @Column
     private Date atualizado;
 
-    //********** Construtor ***********
-    public Aeronave(Long id, String nome, String marca, Integer ano, Text descricao, boolean vendido, Date criado, Date atualizado) {
+    //********** Construtores ***********
+    public Aeronave(){}
+
+    public Aeronave(Long id, String nome, String marca, Integer ano, String descricao, boolean vendido, Date criado, Date atualizado) {
         this.id = id;
         this.nome = nome;
         this.marca = marca;
@@ -81,11 +87,11 @@ public class Aeronave {
         this.ano = ano;
     }
 
-    public Text getDescricao() {
+    public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(Text descricao) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 
