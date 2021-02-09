@@ -14,9 +14,11 @@ utilizando o conceito de SPA.
 
 **Banco de Dados:**
 * MySQL;
+* JDK 8.
 
 ## Requerimentos:
-
+* MySQL;
+* JDK 1.8.
 
 ## Executando o Projeto:
 ### 1º - MySql
