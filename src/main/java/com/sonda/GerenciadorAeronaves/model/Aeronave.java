@@ -1,9 +1,11 @@
 package com.sonda.GerenciadorAeronaves.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -27,17 +29,17 @@ public class Aeronave {
     private String descricao;
     @Column
     private boolean vendido;
-    @JsonFormat(pattern = "dd/MM/yyyy hh:mm:ss")
+    @JsonIgnore
     @Column
-    private Date criado;
-    @JsonFormat(pattern = "dd/MM/yyyy hh:mm:ss")
+    private LocalDateTime criado;
+    @JsonIgnore
     @Column
-    private Date atualizado;
+    private LocalDateTime atualizado;
 
     //********** Construtores ***********
     public Aeronave(){}
 
-    public Aeronave(Long id, String nome, String marca, Integer ano, String descricao, boolean vendido, Date criado, Date atualizado) {
+    public Aeronave(Long id, String nome, String marca, Integer ano, String descricao, boolean vendido, LocalDateTime criado, LocalDateTime atualizado) {
         this.id = id;
         this.nome = nome;
         this.marca = marca;
@@ -97,19 +99,19 @@ public class Aeronave {
         this.vendido = vendido;
     }
 
-    public Date getCriado() {
+    public LocalDateTime getCriado() {
         return criado;
     }
 
-    public void setCriado(Date criado) {
+    public void setCriado(LocalDateTime criado) {
         this.criado = criado;
     }
 
-    public Date getAtualizado() {
+    public LocalDateTime getAtualizado() {
         return atualizado;
     }
 
-    public void setAtualizado(Date atualizado) {
+    public void setAtualizado(LocalDateTime atualizado) {
         this.atualizado = atualizado;
     }
 }

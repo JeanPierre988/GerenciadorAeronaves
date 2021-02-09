@@ -8,6 +8,9 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,6 +18,7 @@ import java.util.Optional;
 @RequestMapping("/aeronaves") //
 
 public class AeronaveControlador {
+
     @Autowired //Injeção de dependencias automaticas
     AeronaveRepositorio aeronaveRepositorio;
 
@@ -32,6 +36,8 @@ public class AeronaveControlador {
 
     @PostMapping //CREATE
     public Aeronave addAeronave(@RequestBody Aeronave aeronave){
+        aeronave.setCriado(LocalDateTime.now());
+        aeronave.setAtualizado(LocalDateTime.now());
         return aeronaveRepositorio.save(aeronave);
     }
 
@@ -44,8 +50,7 @@ public class AeronaveControlador {
         novaAeronave.setAno(aeronaveDetails.getAno());
         novaAeronave.setDescricao(aeronaveDetails.getDescricao());
         novaAeronave.setVendido(aeronaveDetails.isVendido());
-        novaAeronave.setCriado(aeronaveDetails.getCriado());
-        novaAeronave.setAtualizado(aeronaveDetails.getAtualizado());
+        novaAeronave.setAtualizado(LocalDateTime.now());
 
         return aeronaveRepositorio.save(novaAeronave);
     }
