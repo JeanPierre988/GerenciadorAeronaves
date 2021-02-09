@@ -14,15 +14,17 @@ utilizando o conceito de SPA.
 
 **Banco de Dados:**
 * MySQL;
+* JDK 8.
 
 ## Requerimentos:
-
+* MySQL;
+* JDK 1.8.
 
 ## Executando o Projeto:
 ### 1º - MySql
-importar utilizando o command:
-`mysql -u <user> -p <pass> < db_aeronaves.sql`
+* 1º. importar utilizando o command:
+`mysql -u <user> -p <pass> < database/db_aeronaves.sql`
 
 ### 2º - Back-end
-No Terminal, vá até a pasta do projeto e execute o seguinte código:
+* 1º. No Terminal, vá até a pasta do projeto e execute o seguinte código:
 `mvnw.cmd spring-boot:run`
