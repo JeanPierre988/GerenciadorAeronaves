@@ -3,6 +3,8 @@ package com.sonda.GerenciadorAeronaves.controller;
 
 import com.sonda.GerenciadorAeronaves.repository.AeronaveRepositorio;
 import com.sonda.GerenciadorAeronaves.model.Aeronave;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,12 +18,14 @@ public class AeronaveControlador {
     @Autowired //Injeção de dependencias automaticas
     AeronaveRepositorio aeronaveRepositorio;
 
-    @GetMapping //sem findAll/getAll (padrao)
+    @ApiOperation(value = "Lista todas as Aeronaves")
+    @GetMapping
     public List<Aeronave> getAllAeronaves(){
         return aeronaveRepositorio.findAll();
     }
 
-    @GetMapping("/{id}") //READ
+    @ApiOperation(value = "Busca pelo ID")
+    @GetMapping("/{id}")
     public Optional<Aeronave> getAeronavePeloId(@PathVariable(value = "id") Long id){
         return aeronaveRepositorio.findById(id);
     }

@@ -1,28 +1,22 @@
 package com.sonda.GerenciadorAeronaves.model;
 
-
-
 import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.ApiModel;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity //Anotação utilizada indicar que a Classe é uma Entidade e está sendo Mapeada para o BD
-@Table(name="aeronaves") //Mapeamento do BD quer será utilizado
+@Entity
+@Table(name="aeronaves")
 
-/**
- *
- * @Author Jean Pierre
- * @Date 04/02/2021
- *
- */
 
+@ApiModel
 public class Aeronave {
-    @Id //Anotação para determinar a chave primária
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Anotação para gerar um ID atomaticamente
     @Column
     private Long id;
-    @Column //Anotação para indicar as colunas no BD
+    @Column
     private String nome;
     @Column
     private String marca;
@@ -33,7 +27,7 @@ public class Aeronave {
     private String descricao;
     @Column
     private boolean vendido;
-    @JsonFormat(pattern = "dd/MM/yyyy hh:mm:ss") //Formata o Dia/hora
+    @JsonFormat(pattern = "dd/MM/yyyy hh:mm:ss")
     @Column
     private Date criado;
     @JsonFormat(pattern = "dd/MM/yyyy hh:mm:ss")
