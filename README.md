@@ -1,5 +1,5 @@
 # DESAFIO FULL-STACK
-##Gerenciador de Aeronaves
+## Gerenciador de Aeronaves
  Projeto tem como objetivo a criação de 2 aplicações para cadastro de aeronaves:
 
 **Back-End:** Aplicação baseada em Spring MVC e JPA que utilize os métodos (GET, POST, PUT e DELETE);
@@ -15,11 +15,14 @@ utilizando o conceito de SPA.
 **Banco de Dados:**
 * MySQL;
 
-##Executando o Projeto:
-###1º - MySql
+## Requerimentos:
+
+
+## Executando o Projeto:
+### 1º - MySql
 importar utilizando o command:
 `mysql -u <user> -p <pass> < db_aeronaves.sql`
 
-###2º - Back-end
+### 2º - Back-end
 No Terminal, vá até a pasta do projeto e execute o seguinte código:
 `mvnw.cmd spring-boot:run`
