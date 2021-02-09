@@ -16,7 +16,7 @@ utilizando o conceito de SPA.
 * MySQL;
 
 ## Executando o Projeto:
-###1º - MySql
+### 1º - MySql
 importar utilizando o command:
 `mysql -u <user> -p <pass> < db_aeronaves.sql`
 
