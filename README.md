@@ -15,6 +15,9 @@ utilizando o conceito de SPA.
 **Banco de Dados:**
 * MySQL;
 
+## Requerimentos:
+
+
 ## Executando o Projeto:
 ### 1º - MySql
 importar utilizando o command:
