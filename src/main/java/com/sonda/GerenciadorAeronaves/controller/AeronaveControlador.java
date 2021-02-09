@@ -21,17 +21,17 @@ public class AeronaveControlador {
         return aeronaveRepositorio.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}") //READ
     public Optional<Aeronave> getAeronavePeloId(@PathVariable(value = "id") Long id){
         return aeronaveRepositorio.findById(id);
     }
 
-    @PostMapping
+    @PostMapping //CREATE
     public Aeronave addAeronave(@RequestBody Aeronave aeronave){
         return aeronaveRepositorio.save(aeronave);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}") //UPDATE
     public Aeronave updateAeronave(@PathVariable(value = "id") Long id, @RequestBody Aeronave aeronaveDetails){
         Optional<Aeronave> aeronave = aeronaveRepositorio.findById(id);
         Aeronave novaAeronave = aeronave.get();
@@ -46,7 +46,7 @@ public class AeronaveControlador {
         return aeronaveRepositorio.save(novaAeronave);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}") //DELETE
     public void deleteAeronave(@PathVariable(value = "id") Long id){
         Optional<Aeronave> aeronave = aeronaveRepositorio.findById(id);
         Aeronave novaAeronave = aeronave.get();
