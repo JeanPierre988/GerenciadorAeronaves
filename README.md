@@ -14,11 +14,10 @@ utilizando o conceito de SPA.
 
 **Banco de Dados:**
 * MySQL;
-* JDK 8.
 
 ## Requerimentos:
-* MySQL;
-* JDK 1.8.
+* MySQL (https://dev.mysql.com/downloads/workbench/);
+* JDK 1.8 (https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html).
 
 ## Executando o Projeto:
 ### 1º - MySql
@@ -26,5 +25,6 @@ utilizando o conceito de SPA.
 `mysql -u <user> -p <pass> < database/db_aeronaves.sql`
 
 ### 2º - Back-end
-* 1º. No Terminal, vá até a pasta do projeto e execute o seguinte código:
+* 1º Vá até o arquivo `GerenciadorAeronaves\src\main\resources\application.properties`, edite ele e, nos campos de `spring.datasource.username` e `spring.datasource.password` coloque suas irformações para acessar o Banco de Dados
+* 2º. No Terminal, vá até a pasta do projeto e execute o seguinte código:
 `mvnw.cmd spring-boot:run`
