@@ -28,3 +28,6 @@ utilizando o conceito de SPA.
 * 1º Vá até o arquivo `GerenciadorAeronaves\src\main\resources\application.properties`, edite ele e, nos campos de `spring.datasource.username` e `spring.datasource.password` coloque suas irformações para acessar o Banco de Dados
 * 2º. No Terminal, vá até a pasta do projeto e execute o seguinte código:
 `mvnw.cmd spring-boot:run`
+
+### Documentação da API:
+http://localhost:9090/swagger-ui.html

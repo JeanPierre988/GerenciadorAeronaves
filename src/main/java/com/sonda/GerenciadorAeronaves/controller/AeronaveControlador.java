@@ -1,6 +1,7 @@
 package com.sonda.GerenciadorAeronaves.controller;
 
 
+import com.sonda.GerenciadorAeronaves.model.QntdPorMarcas;
 import com.sonda.GerenciadorAeronaves.repository.AeronaveRepositorio;
 import com.sonda.GerenciadorAeronaves.model.Aeronave;
 import io.swagger.annotations.ApiOperation;
@@ -26,6 +27,11 @@ public class AeronaveControlador {
     @GetMapping
     public List<Aeronave> getAllAeronaves(){
         return aeronaveRepositorio.findAll();
+    }
+
+    @GetMapping("/marcas-total")
+    public List<QntdPorMarcas> getMarcasTotal(){
+        return aeronaveRepositorio.countTotalMarcas();
     }
 
     @ApiOperation(value = "Busca pelo ID")

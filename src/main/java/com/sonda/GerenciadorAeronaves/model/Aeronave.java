@@ -10,8 +10,6 @@ import java.util.Date;
 
 @Entity
 @Table(name="aeronaves")
-
-
 @ApiModel
 public class Aeronave {
     @Id
