@@ -2,6 +2,7 @@ package com.sonda.GerenciadorAeronaves.controller;
 
 
 import com.sonda.GerenciadorAeronaves.model.QntdPorMarcas;
+import com.sonda.GerenciadorAeronaves.model.QntdPorSemana;
 import com.sonda.GerenciadorAeronaves.repository.AeronaveRepositorio;
 import com.sonda.GerenciadorAeronaves.model.Aeronave;
 import io.swagger.annotations.ApiOperation;
@@ -33,6 +34,11 @@ public class AeronaveControlador {
     public List<QntdPorMarcas> getMarcasTotal(){
         return aeronaveRepositorio.countTotalMarcas();
     }
+
+    /*@GetMapping("/semana-total")
+    public List<QntdPorSemana> getSemanaTotal(){
+        return aeronaveRepositorio.countTotalSemana();
+    }*/
 
     @ApiOperation(value = "Busca pelo ID")
     @GetMapping("/{id}")
